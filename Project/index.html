@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagein</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://css.gg/css?=|chevron-left|chevron-right" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-wrapper container">
+            <span class="nav-header">
+                Imagein
+            </span>
+
+
+            <div class="image-search input-field">
+                <div class="btn green">
+                    <span>Search: </span>
+                    <input type="text" id="search_query" onchange="searchUnsplash()">
+                </div>
+            </div>
+            <ul class="image-save">
+                <button class="" onclick="saveImage()">
+                    Save
+                </button>
+                <button class="" onclick="resetImage()">
+                    Reset
+                </button>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="auxiliary">
+        <a id="link"></a>
+        <img id="sourceImage" crossorigin="anonymous">
+    </div>
+    <div class="main app">
+        <div class="image-preview">
+            
+            <i class="gg-chevron-left" id="previous-image"></i>
+            <canvas id="canvas" height="0"></canvas>
+            <i class="gg-chevron-right" id="next-image"></i>
+        </div>
+        <div class="help-text" id="help-text">
+            <h5>Search for an image to start</h5>
+        </div>
+
+        <div class="image-controls">
+            <h3>Image Controls</h3>
+            <div class="control-row">
+                <div class="sub-box">
+
+                    <div class="slider-wrapper">
+                        <span class="range-field">
+                            <label for="brightnessSlider">
+                                Brightness
+                            </label>
+                            <input id="brightnessSlider" type="range" value="100" min="10" max="300"
+                                onchange="applyFilter()">
+                        </span>
+                    </div>
+                    <div class="slider-wrapper">
+                        <span class="range-field">
+                            <label for="contrastSlider">
+                                Contrast
+                            </label>
+                            <input id="contrastSlider" type="range" value="100" min="20" max="200"
+                                onchange="applyFilter()">
+                        </span>
+                    </div>
+                    <div class="slider-wrapper">
+                        <span class="range-field">
+                            <label for="grayscaleSlider">
+                                Grayscale
+                            </label>
+                            <input id="grayscaleSlider" type="range" value="0" min="0" max="100"
+                                onchange="applyFilter()">
+                        </span>
+                    </div>
+                </div>
+                <div class="sub-box">
+                    <div class="slider-wrapper">
+                        <span class="range-field">
+                            <label for="saturationSlider">
+                                Saturation
+                            </label>
+                            <input id="saturationSlider" type="range" value="100" min="0" max="300"
+                                onchange="applyFilter()">
+                        </span>
+                    </div>
+                    <div class="slider-wrapper">
+                        <span class="range-field">
+                            <label for="sepiaSlider">
+                                Sepia
+                            </label>
+                            <input id="sepiaSlider" type="range" value="0" min="0" max="200" 
+                                onchange="applyFilter()">
+                        </span>
+                    </div>
+                    <div class="slider-wrapper">
+                        <span class="range-field">
+                            <label for="hueRotateSlider">
+                                Hue
+                            </label>
+                            <input id="hueRotateSlider" type="range" value="0" min="0" max="360"
+                                onchange="applyFilter()">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preset-filters">
+            <h3>Preset Filters</h3>
+            <div class="preset-row">
+                <div class="sub-box">
+                    <button class="btn" onclick="brightenFilter()">
+                        Brighten
+                    </button>
+                    <button class="btn" onclick="bwFilter()">
+                        Black and White
+                    </button>
+                </div>
+                <div class="sub-box">
+                    <button class="btn" onclick="funkyFilter()">
+                        Funky
+                    </button>
+                    <button class="btn" onclick="vintageFilter()">
+                        Vintage
+                    </button>
+                </div>
+                
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
